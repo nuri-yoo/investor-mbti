@@ -108,7 +108,7 @@ def render():
                 st.metric("최대 낙폭", f"{max_drawdown:.1f}%")
                 st.metric("승률", f"{win_rate:.1f}%")
             
-            # 가격 추이 차트
+            # 지수 추이 차트
             fig = go.Figure()
             fig.add_trace(go.Scatter(
                 x=df['Date'],
@@ -117,9 +117,9 @@ def render():
                 name='종가'
             ))
             fig.update_layout(
-                title=f"{sector} 가격 추이",
+                title=f"{sector} 지수 추이",
                 xaxis_title="날짜",
-                yaxis_title="가격",
+                yaxis_title="지수",
                 showlegend=True
             )
             st.plotly_chart(fig)
